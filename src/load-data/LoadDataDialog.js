@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import ic_launcher from '../img/ic_launcher.png'
 import Subheader from 'material-ui/Subheader'
 

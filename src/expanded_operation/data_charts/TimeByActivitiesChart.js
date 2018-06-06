@@ -1,9 +1,8 @@
 import React from 'react'
 import {
-    ComposedChart, Bar, Brush, Line, ReferenceLine, XAxis,
+    ComposedChart, Bar, Line, XAxis,
     YAxis, CartesianGrid, Tooltip, Legend, Label
 } from 'recharts'
-import moment from 'moment'
 
 export default ({ collect, timeFormat }) => {
     if (!collect) return <div />

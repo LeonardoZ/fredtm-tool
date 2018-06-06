@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import CollectExpandContent from './CollectExpandContent'
 import { timeFormatFactoryByUnit, MILISECONDS } from '../logic/DecimalTimeFormats'
@@ -29,7 +28,7 @@ export class CollectExpand extends Component {
   render() {
 
     let props = this.props
-    if ((props.collect == undefined) || (props.collect.times == undefined)) {
+    if ((props.collect === undefined) || (props.collect.times === undefined)) {
       return <p>No collect defined</p>
     }
     return (

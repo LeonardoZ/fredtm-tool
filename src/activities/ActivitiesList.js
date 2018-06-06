@@ -1,5 +1,4 @@
 import React from 'react'
-import { Grid, Row, Col } from 'react-flexbox-grid'
 import Subheader from 'material-ui/Subheader'
 import GridRowCol from '../GridRowCol'
 import { List, ListItem } from 'material-ui/List'

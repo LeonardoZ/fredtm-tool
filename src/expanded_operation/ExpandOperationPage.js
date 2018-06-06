@@ -2,7 +2,7 @@ import React from 'react'
 import GridRowCol from '../GridRowCol'
 import Paper from 'material-ui/Paper'
 import BackBar from "./BackBar"
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar'
+import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar'
 
 const styles = {
     titleStyle: {

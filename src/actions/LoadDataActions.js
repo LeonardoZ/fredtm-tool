@@ -1,4 +1,4 @@
-import { DATA_LOADED, DATA_LOADED_FAILURE, UNLOAD } from './ActionTypes';
+import { DATA_LOADED, UNLOAD } from './ActionTypes';
 
 export function onDataLoaded(data) {
     localStorage.setItem('devdata', data)

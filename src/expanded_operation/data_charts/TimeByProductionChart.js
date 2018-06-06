@@ -2,8 +2,7 @@ import React from 'react'
 import {
     PieChart, Pie, Legend, Tooltip, Cell, text
 } from 'recharts'
-import { getTimeByActivityTime, PRODUCTIVE, AUXILIARY, UNPRODUCTIVE } from '../../logic/CollectsCalculus'
-import { valueToPercent } from '../../logic/CollectsFormatter'
+import { PRODUCTIVE, AUXILIARY, UNPRODUCTIVE } from '../../logic/CollectsCalculus'
 
 export default ({ collect, timeFormat }) => {
     if (!collect) return <div />
@@ -12,7 +11,7 @@ export default ({ collect, timeFormat }) => {
         let oldVal = totalTimeByClassification[time.activity.activityType] || 0
         totalTimeByClassification[time.activity.activityType] = oldVal + time.timed
     });
-    let classificationData = []
+
     const productiveTime = timeFormat.convert(totalTimeByClassification[PRODUCTIVE])
     const nonProductiveTime = timeFormat.convert(
         totalTimeByClassification[AUXILIARY] +
@@ -24,8 +23,6 @@ export default ({ collect, timeFormat }) => {
     const RADIAN = Math.PI / 180;
     const colors = ['#2196F3', '#5C6BC0']
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-        let val = data[index]
-
         const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
         const x = cx + radius * Math.cos(-midAngle * RADIAN);
         const y = cy + radius * Math.sin(-midAngle * RADIAN);

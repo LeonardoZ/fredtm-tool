@@ -1,11 +1,6 @@
 import React from 'react'
-import FlatButton from 'material-ui/FlatButton'
 import Avatar from 'material-ui/Avatar'
-import {
-    blue300,
-    green400,
-    purple500,
-} from 'material-ui/styles/colors'
+import { green400 } from 'material-ui/styles/colors'
 
 
 import { ListItem } from 'material-ui/List'

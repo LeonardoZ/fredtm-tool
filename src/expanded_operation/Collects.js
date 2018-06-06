@@ -10,11 +10,9 @@ import {
 import RaisedButton from 'material-ui/RaisedButton'
 import GridRowCol from '../GridRowCol'
 import {
-    totalTimed, mean, normalTime, operationalEfficiency,
-    utilizationEfficiency, productivity, standardTime,
-    totalProduction
+    totalTimed, mean
 } from '../logic/CollectsCalculus'
-import { milisecsToSecs, valueToPercent } from '../logic/CollectsFormatter'
+import { milisecsToSecs } from '../logic/CollectsFormatter'
 
 export default ({ collects, expandCollect }) => {
     let rows = collects.map((coll, idx) => {

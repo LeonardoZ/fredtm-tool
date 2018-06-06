@@ -1,6 +1,6 @@
 import React from 'react'
 import { LineChart, Line, XAxis, CartesianGrid, YAxis, Tooltip, Legend, Label,ReferenceLine } from 'recharts'
-import { mean, getStandardDeviation } from '../../logic/CollectsCalculus'
+import { getStandardDeviation } from '../../logic/CollectsCalculus'
 import moment from 'moment'
 
 export default ({ collect, timeFormat }) => {

@@ -14,11 +14,11 @@ export default ({ collect, timeFormat }) => {
 
         let timeType = ''
         let type = 0
-        if (timeType == 0) {
+        if (timeType === 0) {
             type = 'Unproductive'
-        } else if (timeType == 1) {
+        } else if (timeType === 1) {
             type = 'Auxiliary'
-        } else if (timeType == 2) {
+        } else if (timeType === 2) {
             type = 'Productive'
         }
         let state = ''

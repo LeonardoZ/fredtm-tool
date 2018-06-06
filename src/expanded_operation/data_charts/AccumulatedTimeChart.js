@@ -1,6 +1,5 @@
 import React from 'react'
 import { LineChart, Line, XAxis, CartesianGrid, YAxis, Tooltip, Legend, Label } from 'recharts'
-import { miliSecsToSecsValue } from '../../logic/CollectsFormatter'
 import moment from 'moment'
 
 export default ({ collect, timeFormat }) => {

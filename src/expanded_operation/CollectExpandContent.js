@@ -1,10 +1,6 @@
 import React from 'react'
 import Paper from 'material-ui/Paper'
 import { Grid, Row, Col } from 'react-flexbox-grid'
-import IconButton from 'material-ui/IconButton'
-import Subheader from 'material-ui/Subheader'
-import Divider from 'material-ui/Divider'
-import ArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import InformationCard from './InformationCard'
 import {
     totalTimed, mean, normalTime, operationalEfficiency,
@@ -21,8 +17,6 @@ import AccumulatedTimeChart from './data_charts/AccumulatedTimeChart'
 import ProductionChart from './data_charts/ProductionChart'
 import TimeByProductionChart from './data_charts/TimeByProductionChart'
 import TimeActivityTable from './data_charts/TimeActivityTable'
-import Drawer from 'material-ui/Drawer'
-import MenuItem from 'material-ui/MenuItem'
 import { Tabs, Tab } from 'material-ui/Tabs'
 import GridRowCol from '../GridRowCol'
 

@@ -18,7 +18,7 @@ const initialData = {
     loaded: false
 }
 
-export default (state = initialData , action) => {
+export default (state = initialData, action) => {
     switch (action.type) {
         case DATA_LOADED:
             try {
@@ -37,7 +37,7 @@ export default (state = initialData , action) => {
                 collectIndex: action.payload.indexedCollect.index
             }
         case UNLOAD:
-            return initialData    
+            return initialData
         default:
             return state;
     }
@@ -48,7 +48,7 @@ function parseDataLoaded(state, jsonData) {
     let collects = [];
     let times = []
     try {
-        let mappedOperations = jsonData.forEach((operation, operationIdx) => {
+        jsonData.forEach((operation, operationIdx) => {
             operation.activities.forEach((activity, activityIdx) => {
                 activities.push({ ...activity, filterId: activityIdx, operationIdx: operationIdx });
             });

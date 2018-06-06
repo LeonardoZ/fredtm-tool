@@ -1,10 +1,7 @@
 import React from 'react'
-import { Grid, Row, Col } from 'react-flexbox-grid'
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card'
-import Chip from 'material-ui/Chip'
-import { blue300, green400 } from 'material-ui/styles/colors'
+import { green400 } from 'material-ui/styles/colors'
 import Avatar from 'material-ui/Avatar'
-import ActivitiesList from '../activities/ActivitiesList'
 
 const OperationInfoHeader = ({ operation, activities }) => {
     return (

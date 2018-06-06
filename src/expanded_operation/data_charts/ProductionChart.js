@@ -1,18 +1,21 @@
 import React from 'react'
-import { BarChart, Bar, Brush, ReferenceLine, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label }
+import { BarChart, Bar, Brush, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label }
     from 'recharts'
-import { miliSecsToSecsValue } from '../../logic/CollectsFormatter'
 import moment from 'moment'
 
 export default ({ collect, timeFormat }) => {
     if (!collect) return <div />
+    
     let quantitativeTimes = collect.times.filter(time => time.activity.quantitative)
-    if (quantitativeTimes === null || quantitativeTimes.length === 0)
+    
+    if (quantitativeTimes === null || quantitativeTimes.length === 0) {
         return <p>No quantitative times</p>
+    }
+
     let data = quantitativeTimes.map(t => {
         return {
             name: t.activityTitle + ' ' + moment(new Date(t.finalDate)).format('h:mm:ss a'),
-            value: parseInt(t.collectedAmount)
+            value: parseInt(t.collectedAmount, 10)
         }
     })
 

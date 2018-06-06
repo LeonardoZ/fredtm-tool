@@ -43,7 +43,7 @@ function toleranceFactor(collect) {
         .filter(time => time.activity.idleActivity)
         .map(time => new Decimal(time.timed))
         .reduce((sum = new Decimal(0), element) => sum.plus(element), new Decimal(0))
-    if (intervalTime == 0 || workedTime == 0) return 1;
+    if (intervalTime === 0 || workedTime === 0) return 1;
     let p = intervalTime.dividedBy(workedTime);
     let value = new Decimal(1).dividedBy(new Decimal(1).sub(p));
     return value

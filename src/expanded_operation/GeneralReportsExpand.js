@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import CollectExpandContent from './CollectExpandContent'
 import { timeFormatFactoryByUnit, MILISECONDS } from '../logic/DecimalTimeFormats'
 import GeneralReportContent from "./GeneralReportContent"
 
@@ -27,7 +24,7 @@ export class GeneralReportsExpand extends Component {
 
   render() {
     let location = this.props.location
-    if (location == undefined || location.state.collects == undefined) {
+    if (location === undefined || location.state.collects === undefined) {
       return <p>No collects defined</p>
     }
     return (

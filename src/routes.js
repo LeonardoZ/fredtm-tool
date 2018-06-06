@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  Route,
-  Redirect
-} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import LoadData from './load-data/LoadData'
 import OperationsContainer from './operations/OperationsContainer'
 import ExpandedOperationContainer from './expanded_operation/ExpandedOperationContainer'

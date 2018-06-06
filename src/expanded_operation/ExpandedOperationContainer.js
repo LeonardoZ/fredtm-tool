@@ -3,9 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { filterCollect } from '../actions/OperationsActions'
 import OperationInfoHeaderFull from './OperationInfoHeaderFull'
-import Collects from './Collects'
 import ExpandedOperationTabs from './ExpandedOperationTabs'
-import BackBar from './BackBar'
 import ExpandOperationPage from './ExpandOperationPage'
 
 class ExpandedOperationContainer extends Component {

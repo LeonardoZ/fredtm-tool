@@ -1,8 +1,6 @@
 import React from 'react'
 import AppBar from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
-import Paper from 'material-ui/Paper'
-import GridRowCol from '../GridRowCol'
 
 const styles = {
     root: {

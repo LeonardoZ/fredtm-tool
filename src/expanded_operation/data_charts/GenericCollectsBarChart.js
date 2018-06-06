@@ -1,7 +1,6 @@
 import React from 'react'
-import { BarChart, Bar, Brush, ReferenceLine, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label }
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label }
     from 'recharts'
-import moment from 'moment'
 
 export default ({ data, yLabel, needsPercent = false, timeFormat = null }) => {
     needsPercent = timeFormat == null

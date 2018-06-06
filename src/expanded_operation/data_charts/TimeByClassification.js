@@ -2,7 +2,6 @@ import React from 'react'
 import {
     PieChart, Pie, Legend, Tooltip, Cell, text
 } from 'recharts'
-import { valueToPercent } from '../../logic/CollectsFormatter'
 
 export default ({ collect, timeFormat }) => {
     if (!collect) return <div />
@@ -17,11 +16,11 @@ export default ({ collect, timeFormat }) => {
             const timed = totalTimeByClassification[key];
 
             let type = ''
-            if (key == 0) {
+            if (key === 0) {
                 type = 'Unproductive'
-            } else if (key == 1) {
+            } else if (key === 1) {
                 type = 'Auxiliary'
-            } else if (key == 2) {
+            } else if (key === 2) {
                 type = 'Productive'
             }
             data.push({ name: type, value: timeFormat.convert(timed) })
@@ -31,8 +30,6 @@ export default ({ collect, timeFormat }) => {
     const RADIAN = Math.PI / 180;
     let colors = ['#FF5252', '#FFEB3B', '#2196F3']
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-        let val = data[index]
-
         const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
         const x = cx + radius * Math.cos(-midAngle * RADIAN);
         const y = cy + radius * Math.sin(-midAngle * RADIAN);
