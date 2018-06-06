@@ -1,8 +1,10 @@
-import { combineReducers } from 'redux';
-import FakeAuth from './fake_auth';
+import { combineReducers } from 'redux'
+import OperationReducer from './OperationReducer'
+import LoadDataReducer from './LoadDataReducer'
 
 const rootReducer = combineReducers({
-    fakeAuth: FakeAuth
+    operationTree: OperationReducer,
+    loadDataTree: LoadDataReducer
 });
 
 export default rootReducer;

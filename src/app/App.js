@@ -1,42 +1,54 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import './App.css'
+import { bindActionCreators } from 'redux'
+import { Router, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import {
+  Route
+} from 'react-router-dom'
 import { getRoutes } from '../routes'
-import AuthButton  from '../login/AuthButton';
+import Layout from './Layout'
+import { onDataLoaded, unloadData } from '../actions/LoadDataActions'
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const history = createBrowserHistory();
 
 class App extends Component {
+
+  componentWillMount() {
+    // load data for easy dev setup 
+    // let devData = localStorage.getItem('devdata')
+    // if (devData !== null)
+    //   this.props.onDataLoaded(devData)
+
+  }
+
+  unload() {
+    this.props.unloadData()
+    history.push('/')
+  }
+
   render() {
     return (
-      <Router>
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-            <hr />
-          </div>
-          <div className="App-intro">
-            <AuthButton />
-              <ul>
-                <li><Link to='/a'>A</Link></li>
-                <li><Link to='/b'>B</Link></li>
-                <li><Link to='/c/1'>C</Link></li>
-              </ul>
-          </div>
-          <div>
-            { getRoutes(this.props.isAuthenticated) }
-          </div>
-        </div>
+      <Router history={history}>
+        <Route>
+          <Layout unload={() => this.unload()} routes={getRoutes()} loaded={this.props.loaded} />
+        </Route>
       </Router>
-    );
+    )
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ operationTree }) {
   return {
-    isAuthenticated: state.fakeAuth.isAuthenticated
+    operations: operationTree.operations,
+    loaded: operationTree.loaded
+
   }
 }
 
-export default connect(mapStateToProps, null)(App);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ onDataLoaded, unloadData }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
