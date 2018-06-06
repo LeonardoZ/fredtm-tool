@@ -1,5 +1,5 @@
 # Fred TM Tool
-Tool do process Fred TM Tool
+A tool for Fred TM data processig. 
 
 # About
 Fred TM APPs can generate json files containing all the local collected data. With Fred TM Tool, you can import those operations_*.json files and see the resuls of a Time and Motion collect. 
